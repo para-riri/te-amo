@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>Para Riri ♡</title>
 
@@ -75,7 +78,9 @@ body {
 }
 
 #inicio h1::before {
+
     content: "♡ ";
+
     color: #f39abb;
 }
 
@@ -123,10 +128,12 @@ body {
 }
 
 #abrir:hover {
+
     transform: scale(1.06);
 }
 
 #inicio.oculto {
+
     display: none;
 }
 
@@ -271,6 +278,7 @@ body {
 @keyframes subirCorazon {
 
     0% {
+
         opacity: 0;
 
         transform:
@@ -279,14 +287,17 @@ body {
     }
 
     20% {
+
         opacity: .8;
     }
 
     80% {
+
         opacity: .5;
     }
 
     100% {
+
         opacity: 0;
 
         transform:
@@ -459,10 +470,12 @@ body {
 }
 
 .oreja.una {
+
     left: 5px;
 }
 
 .oreja.dos {
+
     right: 5px;
 }
 
@@ -502,11 +515,15 @@ body {
 @keyframes animalito {
 
     0%,100% {
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 
     50% {
-        transform: translateY(-7px);
+
+        transform:
+            translateY(-7px);
     }
 }
 
@@ -564,7 +581,6 @@ body {
     color: #f39abb;
 }
 
-
 .subtitulo {
 
     margin: 0 auto 50px;
@@ -618,13 +634,19 @@ body {
 @keyframes aparecerMensaje {
 
     from {
+
         opacity: 0;
-        transform: translateY(35px);
+
+        transform:
+            translateY(35px);
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
@@ -637,7 +659,8 @@ body {
     left: 50%;
     top: -24px;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     width: 48px;
     height: 48px;
@@ -681,7 +704,7 @@ body {
 
 
 /* =========================================================
-   ESCENARIO DE RECUERDOS
+   RECUERDOS
 ========================================================= */
 
 .recuerdos {
@@ -750,7 +773,7 @@ body {
 
 
 /* =========================================================
-   CONTENEDOR DE FOTOS
+   CONTENEDOR FOTOS
 ========================================================= */
 
 #recuerdosFlotantes {
@@ -769,7 +792,7 @@ body {
 
 
 /* =========================================================
-   TARJETA DE FOTO
+   TARJETA
 ========================================================= */
 
 .recuerdoFlotante {
@@ -788,8 +811,7 @@ body {
 
     border-radius: 12px;
 
-    border:
-        1px solid white;
+    border: 1px solid white;
 
     box-shadow:
         0 15px 35px rgba(120,60,95,.35),
@@ -820,7 +842,7 @@ body {
 
 
 /* =========================================================
-   CORAZON DE LA FOTO
+   CORAZON FOTO
 ========================================================= */
 
 .recuerdoFlotante::after {
@@ -854,8 +876,7 @@ body {
 
 
 /* =========================================================
-   RECORRIDO COMPLETO
-   LAS FOTOS SUBEN DESDE ABAJO HASTA ARRIBA
+   ANIMACION FOTOS
 ========================================================= */
 
 @keyframes recuerdoFlotar {
@@ -957,7 +978,7 @@ body {
 
 
 /* =========================================================
-   DECORACIÓN
+   DECORACION
 ========================================================= */
 
 .recuerdos::before {
@@ -988,7 +1009,7 @@ body {
 
 
 /* =========================================================
-   MENSAJE FINAL
+   FINAL
 ========================================================= */
 
 .final {
@@ -1040,7 +1061,7 @@ body {
 
 
 /* =========================================================
-   MÚSICA
+   MUSICA
 ========================================================= */
 
 #musicaControl {
@@ -1055,7 +1076,8 @@ body {
     width: 55px;
     height: 55px;
 
-    border: 1px solid rgba(255,255,255,.7);
+    border:
+        1px solid rgba(255,255,255,.7);
 
     border-radius: 50%;
 
@@ -1078,17 +1100,20 @@ body {
 
 
 /* =========================================================
-   MÓVIL
+   MOVIL
 ========================================================= */
 
 @media (max-width: 600px) {
 
     .contenido {
+
         width: 94%;
     }
 
     .mensaje {
-        padding: 38px 22px;
+
+        padding:
+            38px 22px;
     }
 
     .mensaje p {
@@ -1218,6 +1243,7 @@ body {
 }
 
 </style>
+
 </head>
 
 
@@ -1230,12 +1256,16 @@ body {
 
 <section id="inicio">
 
-    <h1>Para mi Riri ♡</h1>
+    <h1>
+        Para mi Riri ♡
+    </h1>
 
     <p>
+
         Hice este pequeño lugar para guardar
         algunos recuerdos y decirte algo
         que llevo en el corazón.
+
     </p>
 
     <button
@@ -1250,7 +1280,7 @@ body {
 
 
 <!-- =====================================================
-     PÁGINA
+     PAGINA
 ===================================================== -->
 
 <main id="pagina">
@@ -1264,10 +1294,15 @@ body {
 
     <div class="pradera"></div>
 
-    <div class="flores" id="flores"></div>
+    <div
+        class="flores"
+        id="flores">
+    </div>
 
 
-    <!-- CONEJITO -->
+    <!-- =================================================
+         CONEJITO
+    ================================================== -->
 
     <div class="animal conejo">
 
@@ -1296,7 +1331,9 @@ body {
 
 
         <h2 class="titulo">
+
             Para ti
+
         </h2>
 
 
@@ -1353,7 +1390,16 @@ body {
 
 
         <!-- =================================================
-             🌸 RECUERDOS — SOLO 4 FOTOS PNG
+             4 FOTOS
+             
+             IMPORTANTE:
+             Las fotos están junto a index.html.
+             
+             Nombres:
+             foto1.png
+             foto2.png
+             foto3.png
+             foto4.png
         ================================================== -->
 
         <section class="recuerdos">
@@ -1404,7 +1450,7 @@ body {
 
 
 <!-- =====================================================
-     MÚSICA
+     MUSICA
 ===================================================== -->
 
 <audio
@@ -1413,7 +1459,7 @@ body {
     preload="auto">
 
     <source
-        src="nadie-mas.mp3"
+        src="./nadie-mas.mp3"
         type="audio/mpeg">
 
 </audio>
@@ -1437,7 +1483,11 @@ body {
 const estrellas =
     document.getElementById("estrellas");
 
-for (let i = 0; i < 70; i++) {
+for (
+    let i = 0;
+    i < 70;
+    i++
+) {
 
     const estrella =
         document.createElement("div");
@@ -1467,7 +1517,11 @@ for (let i = 0; i < 70; i++) {
 const corazones =
     document.getElementById("corazones");
 
-for (let i = 0; i < 20; i++) {
+for (
+    let i = 0;
+    i < 20;
+    i++
+) {
 
     const corazon =
         document.createElement("div");
@@ -1502,7 +1556,11 @@ for (let i = 0; i < 20; i++) {
 const flores =
     document.getElementById("flores");
 
-for (let i = 0; i < 40; i++) {
+for (
+    let i = 0;
+    i < 40;
+    i++
+) {
 
     const flor =
         document.createElement("div");
@@ -1532,15 +1590,30 @@ const recuerdosFlotantes =
     );
 
 
+/*
+   MUY IMPORTANTE:
+
+   Los archivos están junto a index.html.
+
+   NO hay carpeta "fotos".
+
+   Los nombres son exactamente:
+
+   foto1.png
+   foto2.png
+   foto3.png
+   foto4.png
+*/
+
 const recuerdos = [
 
-    "srcfoto1.png",
+    "./foto1.png",
 
-    "srcfoto2.png",
+    "./foto2.png",
 
-    "srcfoto3.png",
+    "./foto3.png",
 
-    "srcfoto4.png"
+    "./foto4.png"
 
 ];
 
@@ -1561,17 +1634,14 @@ function crearRecuerdo() {
     const tarjeta =
         document.createElement("div");
 
+
     tarjeta.className =
         "recuerdoFlotante";
 
 
-    /*
-       Cada foto aparece en una
-       posición diferente.
-    */
-
     const posicion =
         20 + Math.random() * 60;
+
 
     tarjeta.style.left =
         posicion + "%";
@@ -1581,22 +1651,39 @@ function crearRecuerdo() {
         document.createElement("img");
 
 
-    img.src = src;
+    img.src =
+        src;
+
 
     img.alt =
         "Nuestro recuerdo ♡";
 
 
     /*
-       Si una foto no carga,
-       mostramos información en consola.
+       Esto nos permite saber si GitHub
+       realmente encontró la imagen.
     */
+
+    img.onload = function () {
+
+        console.log(
+            "✓ FOTO CARGADA:",
+            src
+        );
+
+    };
+
 
     img.onerror = function () {
 
         console.error(
-            "No se pudo cargar la foto:",
+            "✗ NO SE PUDO CARGAR:",
             src
+        );
+
+        console.error(
+            "URL INTENTADA:",
+            img.src
         );
 
     };
@@ -1626,21 +1713,25 @@ function crearRecuerdo() {
 
 
     /*
-       La animación dura 9 segundos.
+       La tarjeta desaparece
+       después de la animación.
     */
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        if (
-            tarjeta &&
-            tarjeta.parentNode
-        ) {
+            if (
+                tarjeta &&
+                tarjeta.parentNode
+            ) {
 
-            tarjeta.remove();
+                tarjeta.remove();
 
-        }
+            }
 
-    }, 9200);
+        },
+        9200
+    );
 
 }
 
@@ -1649,27 +1740,33 @@ function crearRecuerdo() {
    INICIAR FOTOS
 ========================================================= */
 
-setTimeout(() => {
+setTimeout(
+    () => {
 
-    crearRecuerdo();
+        crearRecuerdo();
 
-}, 1000);
+    },
+    1000
+);
 
 
 /*
    Cada 2.5 segundos aparece
-   una nueva foto.
+   otra foto.
 */
 
-setInterval(() => {
+setInterval(
+    () => {
 
-    crearRecuerdo();
+        crearRecuerdo();
 
-}, 2500);
+    },
+    2500
+);
 
 
 /* =========================================================
-   ABRIR PÁGINA
+   ABRIR PAGINA
 ========================================================= */
 
 function abrirPagina() {
@@ -1678,6 +1775,7 @@ function abrirPagina() {
         document.getElementById(
             "inicio"
         );
+
 
     const musica =
         document.getElementById(
@@ -1690,22 +1788,25 @@ function abrirPagina() {
     );
 
 
-    musica.volume = .7;
+    musica.volume =
+        0.7;
 
 
-    musica.play().catch(() => {
+    musica.play().catch(
+        () => {
 
-        console.log(
-            "El navegador bloqueó el autoplay."
-        );
+            console.log(
+                "El navegador bloqueó el autoplay."
+            );
 
-    });
+        }
+    );
 
 }
 
 
 /* =========================================================
-   MÚSICA
+   CONTROL MUSICA
 ========================================================= */
 
 function controlarMusica() {
@@ -1715,13 +1816,16 @@ function controlarMusica() {
             "musica"
         );
 
+
     const boton =
         document.getElementById(
             "musicaControl"
         );
 
 
-    if (musica.paused) {
+    if (
+        musica.paused
+    ) {
 
         musica.play();
 
@@ -1741,5 +1845,7 @@ function controlarMusica() {
 
 </script>
 
+
 </body>
+
 </html>
