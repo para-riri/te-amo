@@ -35,38 +35,12 @@ body {
 
 
 /* =========================================================
-   PÁGINA
-========================================================= */
-
-#pagina {
-
-    position: relative;
-
-    min-height: 100vh;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #bde4f5 0%,
-            #c7e8f6 18%,
-            #f4d5e5 43%,
-            #f4c6dc 65%,
-            #e9aeca 82%,
-            #d88eae 100%
-        );
-}
-
-
-/* =========================================================
    PANTALLA DE ENTRADA
 ========================================================= */
 
 #inicio {
 
     position: fixed;
-
     inset: 0;
 
     width: 100vw;
@@ -75,11 +49,8 @@ body {
     z-index: 9999;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     align-items: center;
 
     text-align: center;
@@ -89,24 +60,114 @@ body {
     background:
         radial-gradient(
             circle at 50% 35%,
-            #fff9fc 0%,
-            #ffeaf3 30%,
-            #f8c5dc 65%,
-            #e99abd 100%
+            #fff7fb 0%,
+            #ffeaf3 28%,
+            #f9c5dc 62%,
+            #ee9fc2 100%
         );
 
     transition:
-        opacity 1.2s ease,
-        visibility 1.2s ease;
+        opacity 1.3s ease,
+        visibility 1.3s ease;
 }
 
 #inicio.oculto {
 
     opacity: 0;
-
     visibility: hidden;
+    pointer-events: none;
+}
+
+#inicio::before {
+
+    content: "♡   ♡   ♡   ♡   ♡";
+
+    position: absolute;
+
+    top: 10%;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #f0a5c5;
+
+    font-size: 30px;
+
+    letter-spacing: 18px;
+
+    opacity: .7;
 
     pointer-events: none;
+}
+
+#inicio::after {
+
+    content: "♡   ♡   ♡";
+
+    position: absolute;
+
+    bottom: 10%;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #f09cbe;
+
+    font-size: 42px;
+
+    letter-spacing: 25px;
+
+    opacity: .65;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTENIDO ENTRADA
+========================================================= */
+
+.inicio-contenido {
+
+    position: relative;
+    z-index: 2;
+
+    width: min(700px, 92%);
+
+    padding: 50px 35px;
+
+    background: #fff8fc;
+
+    border: 3px solid #fff;
+
+    border-radius: 40px;
+
+    box-shadow:
+        0 20px 60px rgba(188,91,132,.22),
+        0 0 0 10px rgba(255,255,255,.25);
+
+    animation: entradaSuave 1.5s ease;
+}
+
+@keyframes entradaSuave {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(30px)
+            scale(.94);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
 }
 
 #inicio h1 {
@@ -114,26 +175,28 @@ body {
     margin: 0 0 20px;
 
     font-size:
-        clamp(3rem, 10vw, 5.5rem);
+        clamp(2.8rem, 9vw, 5.5rem);
 
     color: #e783ad;
 
     text-shadow:
-        0 4px 12px rgba(180,80,125,.2);
+        0 3px 8px rgba(184,86,127,.15);
 }
 
 #inicio p {
 
-    max-width: 600px;
-
     margin: 0 auto 35px;
+
+    max-width: 560px;
+
+    font-size:
+        clamp(1.05rem, 3vw, 1.3rem);
+
+    line-height: 1.8;
 
     color: #b85d82;
 
-    font-size:
-        clamp(1rem, 3vw, 1.25rem);
-
-    line-height: 1.8;
+    font-weight: 500;
 }
 
 #abrir {
@@ -162,7 +225,7 @@ body {
     cursor: pointer;
 
     box-shadow:
-        0 10px 30px rgba(180,80,125,.3);
+        0 10px 25px rgba(184,82,126,.25);
 
     transition:
         transform .3s ease,
@@ -173,10 +236,35 @@ body {
 
     transform:
         translateY(-4px)
-        scale(1.05);
+        scale(1.06);
 
     box-shadow:
-        0 15px 35px rgba(180,80,125,.4);
+        0 15px 35px rgba(184,82,126,.35);
+}
+
+
+/* =========================================================
+   FONDO
+========================================================= */
+
+#pagina {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #bde4f5 0%,
+            #c7e8f6 18%,
+            #f4d5e5 43%,
+            #f4c6dc 65%,
+            #e9aeca 82%,
+            #d88eae 100%
+        );
 }
 
 
@@ -210,8 +298,6 @@ body {
     box-shadow:
         0 0 60px rgba(255,255,255,.8),
         0 0 120px rgba(255,190,220,.6);
-
-    z-index: 1;
 }
 
 
@@ -288,18 +374,16 @@ body {
 
     font-size: 18px;
 
-    opacity: 0;
-
     animation:
         subirCorazon 8s ease-in-out infinite;
+
+    opacity: 0;
 }
 
 @keyframes subirCorazon {
 
     0% {
-
         opacity: 0;
-
         transform:
             translateY(40px)
             scale(.7);
@@ -314,9 +398,7 @@ body {
     }
 
     100% {
-
         opacity: 0;
-
         transform:
             translateY(-180px)
             scale(1.2);
@@ -405,13 +487,11 @@ body {
 }
 
 .flor::before {
-
     left: -8px;
     top: -4px;
 }
 
 .flor::after {
-
     left: 8px;
     top: -4px;
 }
@@ -562,7 +642,7 @@ body {
 
 
 /* =========================================================
-   TÍTULO
+   TITULO
 ========================================================= */
 
 .titulo {
@@ -579,16 +659,12 @@ body {
 }
 
 .titulo::before {
-
     content: "♡ ";
-
     color: #f39abb;
 }
 
 .titulo::after {
-
     content: " ♡";
-
     color: #f39abb;
 }
 
@@ -645,19 +721,13 @@ body {
 @keyframes aparecerMensaje {
 
     from {
-
         opacity: 0;
-
-        transform:
-            translateY(35px);
+        transform: translateY(35px);
     }
 
     to {
-
         opacity: 1;
-
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 }
 
@@ -714,7 +784,7 @@ body {
 
 
 /* =========================================================
-   ESCENARIO DE RECUERDOS
+   RECUERDOS
 ========================================================= */
 
 .recuerdos {
@@ -723,7 +793,7 @@ body {
 
     width: 100%;
 
-    height: 620px;
+    height: 520px;
 
     margin-top: 75px;
 
@@ -747,7 +817,7 @@ body {
 
 
 /* =========================================================
-   TÍTULO
+   TITULO RECUERDOS
 ========================================================= */
 
 .recuerdosTitulo {
@@ -755,7 +825,6 @@ body {
     position: absolute;
 
     top: 22px;
-
     left: 50%;
 
     transform: translateX(-50%);
@@ -782,7 +851,7 @@ body {
 
 
 /* =========================================================
-   CONTENEDOR DE FOTOS
+   CONTENEDOR FLOTANTES
 ========================================================= */
 
 #recuerdosFlotantes {
@@ -796,14 +865,12 @@ body {
 
 
 /* =========================================================
-   TARJETAS
+   TARJETA FOTO / VIDEO
 ========================================================= */
 
 .recuerdoFlotante {
 
     position: absolute;
-
-    left: 50%;
 
     bottom: -230px;
 
@@ -824,7 +891,7 @@ body {
     opacity: 0;
 
     animation:
-        recuerdoFlotar 10s linear forwards;
+        recuerdoFlotar 11s linear forwards;
 }
 
 .recuerdoFlotante img,
@@ -840,11 +907,6 @@ body {
 
     border-radius: 7px;
 }
-
-
-/* =========================================================
-   CORAZÓN DE LA TARJETA
-========================================================= */
 
 .recuerdoFlotante::after {
 
@@ -878,7 +940,6 @@ body {
 
 /* =========================================================
    ANIMACIÓN LARGA
-   SUBE DESDE ABAJO HASTA ARRIBA
 ========================================================= */
 
 @keyframes recuerdoFlotar {
@@ -888,7 +949,7 @@ body {
         opacity: 0;
 
         transform:
-            translate(-50%, 80px)
+            translate(-50%, 100px)
             rotate(-8deg)
             scale(.65);
     }
@@ -903,75 +964,68 @@ body {
             scale(.9);
     }
 
-    22% {
+    25% {
 
         opacity: 1;
 
         transform:
             translate(
-                calc(-50% - 100px),
+                calc(-50% - 90px),
                 -100px
             )
             rotate(7deg)
             scale(1);
     }
 
-    38% {
+    45% {
 
-        transform:
-            translate(
-                calc(-50% + 110px),
-                -220px
-            )
-            rotate(-7deg)
-            scale(1.03);
-    }
-
-    54% {
-
-        transform:
-            translate(
-                calc(-50% - 120px),
-                -340px
-            )
-            rotate(6deg)
-            scale(1);
-    }
-
-    70% {
+        opacity: 1;
 
         transform:
             translate(
                 calc(-50% + 100px),
-                -460px
+                -230px
             )
             rotate(-6deg)
-            scale(.95);
+            scale(1.03);
     }
 
-    84% {
+    65% {
 
-        opacity: .75;
+        opacity: 1;
 
         transform:
             translate(
                 calc(-50% - 80px),
-                -580px
+                -370px
             )
-            rotate(7deg)
+            rotate(6deg)
+            scale(.98);
+    }
+
+    82% {
+
+        opacity: .8;
+
+        transform:
+            translate(
+                calc(-50% + 70px),
+                -500px
+            )
+            rotate(-7deg)
             scale(.82);
     }
 
     94% {
 
-        opacity: .3;
+        opacity: .35;
 
         transform:
             translate(
-                calc(-50% + 60px),
-                -680px
+                calc(-50% - 50px),
+                -620px
             )
-            rotate(-7deg)
+            rotate(7deg)
             scale(.65);
     }
 
@@ -981,10 +1035,10 @@ body {
 
         transform:
             translate(
-                calc(-50% - 40px),
-                -800px
+                calc(-50% + 40px),
+                -760px
             )
-            rotate(8deg)
+            rotate(-8deg)
             scale(.45);
     }
 }
@@ -1002,7 +1056,6 @@ body {
     position: absolute;
 
     left: 50%;
-
     top: 65px;
 
     transform:
@@ -1089,7 +1142,8 @@ body {
     width: 55px;
     height: 55px;
 
-    border: 1px solid rgba(255,255,255,.7);
+    border:
+        1px solid rgba(255,255,255,.7);
 
     border-radius: 50%;
 
@@ -1118,14 +1172,11 @@ body {
 @media (max-width: 600px) {
 
     .contenido {
-
         width: 94%;
     }
 
     .mensaje {
-
-        padding:
-            38px 22px;
+        padding: 38px 22px;
     }
 
     .mensaje p {
@@ -1137,7 +1188,7 @@ body {
 
     .recuerdos {
 
-        height: 570px;
+        height: 470px;
 
         margin-top: 65px;
 
@@ -1162,7 +1213,7 @@ body {
             opacity: 0;
 
             transform:
-                translate(-50%, 80px)
+                translate(-50%, 100px)
                 rotate(-7deg)
                 scale(.6);
         }
@@ -1177,60 +1228,49 @@ body {
                 scale(.85);
         }
 
-        22% {
+        25% {
 
             transform:
                 translate(
-                    calc(-50% - 50px),
+                    calc(-50% - 45px),
                     -100px
                 )
                 rotate(5deg)
-                scale(.95);
+                scale(1);
         }
 
-        38% {
+        45% {
 
             transform:
                 translate(
-                    calc(-50% + 55px),
-                    -210px
+                    calc(-50% + 45px),
+                    -220px
                 )
                 rotate(-5deg)
                 scale(1);
         }
 
-        54% {
+        65% {
 
             transform:
                 translate(
-                    calc(-50% - 60px),
-                    -320px
+                    calc(-50% - 35px),
+                    -340px
                 )
                 rotate(5deg)
-                scale(.95);
-        }
-
-        70% {
-
-            transform:
-                translate(
-                    calc(-50% + 50px),
-                    -430px
-                )
-                rotate(-5deg)
                 scale(.9);
         }
 
-        85% {
+        82% {
 
             opacity: .7;
 
             transform:
                 translate(
-                    calc(-50% - 40px),
-                    -540px
+                    calc(-50% + 30px),
+                    -460px
                 )
-                rotate(5deg)
+                rotate(-6deg)
                 scale(.75);
         }
 
@@ -1240,17 +1280,16 @@ body {
 
             transform:
                 translate(
-                    calc(-50% + 30px),
-                    -680px
+                    calc(-50% - 25px),
+                    -650px
                 )
-                rotate(-7deg)
+                rotate(7deg)
                 scale(.5);
         }
     }
 }
 
 </style>
-
 </head>
 
 
@@ -1263,23 +1302,27 @@ body {
 
 <section id="inicio">
 
-    <h1>
-        Para mi Riri ♡
-    </h1>
+    <div class="inicio-contenido">
 
-    <p>
-        Hice este pequeño lugar para guardar
-        algunos recuerdos y decirte algo
-        que llevo en el corazón.
-    </p>
+        <h1>
+            Para mi Riri ♡
+        </h1>
 
-    <button
-        id="abrir"
-        onclick="abrirPagina()">
+        <p>
+            Hice este pequeño lugar para guardar
+            algunos recuerdos y decirte algo
+            que llevo en el corazón.
+        </p>
 
-        Entrar ♡
+        <button
+            id="abrir"
+            onclick="abrirPagina()">
 
-    </button>
+            Entrar ♡
+
+        </button>
+
+    </div>
 
 </section>
 
@@ -1291,37 +1334,22 @@ body {
 <main id="pagina">
 
 
-    <!-- SOL -->
-
     <div class="sol"></div>
 
-
-    <!-- ESTRELLAS -->
 
     <div id="estrellas"></div>
 
 
-    <!-- CORAZONES -->
-
     <div id="corazones"></div>
 
-
-    <!-- PRADERA -->
 
     <div class="pradera"></div>
 
 
-    <!-- FLORES -->
-
-    <div
-        class="flores"
-        id="flores">
-    </div>
+    <div class="flores" id="flores"></div>
 
 
-    <!-- =================================================
-         CONEJITO
-    ================================================== -->
+    <!-- CONEJITO -->
 
     <div class="animal conejo">
 
@@ -1355,11 +1383,8 @@ body {
 
 
         <p class="subtitulo">
-
             Un pequeño rincón hecho especialmente
-            para la persona que hace mis días
-            más bonitos. ♡
-
+            para la persona que hace mis días más bonitos. ♡
         </p>
 
 
@@ -1413,7 +1438,6 @@ body {
 
         <section class="recuerdos">
 
-
             <div class="recuerdosTitulo">
 
                 <span>♡</span>
@@ -1426,7 +1450,6 @@ body {
 
 
             <div id="recuerdosFlotantes"></div>
-
 
         </section>
 
@@ -1476,8 +1499,7 @@ body {
 
 <button
     id="musicaControl"
-    onclick="controlarMusica()"
-    aria-label="Controlar música">
+    onclick="controlarMusica()">
 
     ▶
 
@@ -1558,7 +1580,7 @@ for (let i = 0; i < 20; i++) {
 const flores =
     document.getElementById("flores");
 
-for (let i = 40; i < 0; i--) {
+for (let i = 40; i--;) {
 
     const flor =
         document.createElement("div");
@@ -1585,17 +1607,19 @@ for (let i = 40; i < 0; i--) {
 /*
    IMPORTANTE:
 
-   Las 4 fotos son PNG:
+   Tus 4 FOTOS son PNG:
 
-   fotos/foto1.png
-   fotos/foto2.png
-   fotos/foto3.png
-   fotos/foto4.png
+   foto1.png
+   foto2.png
+   foto3.png
+   foto4.png
 
-   Los 2 videos son MP4:
+   Tus VIDEOS:
 
-   videos/video1.mp4
-   videos/video2.mp4
+   video1.mp4
+   video2.mp4
+
+   Todos están directamente junto al HTML.
 */
 
 const recuerdosFlotantes =
@@ -1608,32 +1632,32 @@ const recuerdos = [
 
     {
         tipo: "imagen",
-        src: "fotos/foto1.png"
+        src: "foto1.png"
     },
 
     {
         tipo: "video",
-        src: "videos/video1.mp4"
+        src: "video1.mp4"
     },
 
     {
         tipo: "imagen",
-        src: "fotos/foto2.png"
+        src: "foto2.png"
     },
 
     {
         tipo: "video",
-        src: "videos/video2.mp4"
+        src: "video2.mp4"
     },
 
     {
         tipo: "imagen",
-        src: "fotos/foto3.png"
+        src: "foto3.png"
     },
 
     {
         tipo: "imagen",
-        src: "fotos/foto4.png"
+        src: "foto4.png"
     }
 
 ];
@@ -1660,12 +1684,12 @@ function crearRecuerdo() {
 
 
     /*
-       Los recuerdos aparecen
-       principalmente hacia los lados.
+       Se mantienen a los lados
+       y no aparecen debajo del texto.
     */
 
     const posicion =
-        10 + Math.random() * 80;
+        12 + Math.random() * 76;
 
     tarjeta.style.left =
         posicion + "%";
@@ -1675,10 +1699,7 @@ function crearRecuerdo() {
        FOTO
     ===================================================== */
 
-    if (
-        recuerdo.tipo ===
-        "imagen"
-    ) {
+    if (recuerdo.tipo === "imagen") {
 
         const img =
             document.createElement("img");
@@ -1690,8 +1711,8 @@ function crearRecuerdo() {
             "Nuestro recuerdo ♡";
 
         /*
-           Si la imagen no carga,
-           aparece un mensaje en consola.
+           Si no carga, aparecerá un mensaje
+           en la consola indicando el archivo.
         */
 
         img.onerror = function() {
@@ -1703,9 +1724,7 @@ function crearRecuerdo() {
 
         };
 
-        tarjeta.appendChild(
-            img
-        );
+        tarjeta.appendChild(img);
     }
 
 
@@ -1713,10 +1732,7 @@ function crearRecuerdo() {
        VIDEO
     ===================================================== */
 
-    if (
-        recuerdo.tipo ===
-        "video"
-    ) {
+    if (recuerdo.tipo === "video") {
 
         const video =
             document.createElement("video");
@@ -1732,6 +1748,8 @@ function crearRecuerdo() {
 
         video.playsInline = true;
 
+        video.controls = false;
+
         video.onerror = function() {
 
             console.error(
@@ -1741,13 +1759,9 @@ function crearRecuerdo() {
 
         };
 
-        tarjeta.appendChild(
-            video
-        );
+        tarjeta.appendChild(video);
 
-        video.play().catch(
-            () => {}
-        );
+        video.play().catch(() => {});
     }
 
 
@@ -1755,10 +1769,6 @@ function crearRecuerdo() {
         tarjeta
     );
 
-
-    /*
-       Siguiente recuerdo.
-    */
 
     recuerdoActual++;
 
@@ -1772,17 +1782,14 @@ function crearRecuerdo() {
 
 
     /*
-       La animación dura 10 segundos.
+       La animación dura 11 segundos.
     */
 
-    setTimeout(
-        () => {
+    setTimeout(() => {
 
-            tarjeta.remove();
+        tarjeta.remove();
 
-        },
-        10100
-    );
+    }, 11200);
 }
 
 
@@ -1790,28 +1797,22 @@ function crearRecuerdo() {
    PRIMER RECUERDO
 ========================================================= */
 
-setTimeout(
-    () => {
+setTimeout(() => {
 
-        crearRecuerdo();
+    crearRecuerdo();
 
-    },
-    1000
-);
+}, 1000);
 
 
 /* =========================================================
-   NUEVO RECUERDO CADA 3.3 SEGUNDOS
+   SIGUIENTES RECUERDOS
 ========================================================= */
 
-setInterval(
-    () => {
+setInterval(() => {
 
-        crearRecuerdo();
+    crearRecuerdo();
 
-    },
-    3300
-);
+}, 3500);
 
 
 /* =========================================================
@@ -1830,6 +1831,7 @@ function abrirPagina() {
             "musica"
         );
 
+
     inicio.classList.add(
         "oculto"
     );
@@ -1839,24 +1841,21 @@ function abrirPagina() {
 
 
     musica.play()
-        .then(
-            () => {
+        .then(() => {
 
-                document.getElementById(
-                    "musicaControl"
-                ).textContent = "Ⅱ";
+            document.getElementById(
+                "musicaControl"
+            ).textContent = "Ⅱ";
 
-            }
-        )
-        .catch(
-            () => {
+        })
+        .catch(() => {
 
-                console.log(
-                    "El navegador bloqueó la música."
-                );
+            console.log(
+                "El navegador bloqueó la reproducción automática."
+            );
 
-            }
-        );
+        });
+
 }
 
 
@@ -1877,22 +1876,16 @@ function controlarMusica() {
         );
 
 
-    if (
-        musica.paused
-    ) {
+    if (musica.paused) {
 
         musica.play()
-            .then(
-                () => {
+            .then(() => {
 
-                    boton.textContent =
-                        "Ⅱ";
+                boton.textContent =
+                    "Ⅱ";
 
-                }
-            )
-            .catch(
-                () => {}
-            );
+            })
+            .catch(() => {});
 
     } else {
 
@@ -1900,7 +1893,9 @@ function controlarMusica() {
 
         boton.textContent =
             "▶";
+
     }
+
 }
 
 </script>
