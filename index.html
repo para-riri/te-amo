@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 
 <meta charset="UTF-8">
@@ -27,10 +26,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    font-family: Georgia, "Times New Roman", serif;
 
     color: #fff;
 
@@ -39,7 +35,104 @@ body {
 
 
 /* =========================================================
-   PÁGINA
+   ENTRADA
+========================================================= */
+
+#inicio {
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #bde4f5,
+            #f4d5e5,
+            #e9aeca
+        );
+}
+
+#inicio h1 {
+
+    margin: 0 0 20px;
+
+    font-size:
+        clamp(2.5rem, 10vw, 5rem);
+
+    color: white;
+
+    text-shadow:
+        0 4px 20px rgba(170,80,125,.4);
+}
+
+#inicio h1::before {
+    content: "♡ ";
+    color: #f39abb;
+}
+
+#inicio p {
+
+    max-width: 550px;
+
+    font-size: 1.2rem;
+
+    line-height: 1.7;
+
+    color: #fff8fb;
+}
+
+#abrir {
+
+    margin-top: 25px;
+
+    padding: 15px 35px;
+
+    border: 0;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f2a1bd,
+            #d97eaa
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 1.1rem;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(150,70,110,.3);
+
+    transition:
+        transform .3s ease;
+}
+
+#abrir:hover {
+    transform: scale(1.06);
+}
+
+#inicio.oculto {
+    display: none;
+}
+
+
+/* =========================================================
+   FONDO
 ========================================================= */
 
 #pagina {
@@ -60,127 +153,6 @@ body {
             #e9aeca 82%,
             #d88eae 100%
         );
-}
-
-
-/* =========================================================
-   PANTALLA DE ENTRADA
-========================================================= */
-
-#inicio {
-
-    position: fixed;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100vh;
-
-    z-index: 9999;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    padding: 25px;
-
-    background:
-        radial-gradient(
-            circle at 50% 35%,
-            #fff8fc 0%,
-            #ffeaf3 30%,
-            #f8c6dc 65%,
-            #ed9fc2 100%
-        );
-
-    transition:
-        opacity 1.2s ease,
-        visibility 1.2s ease;
-}
-
-#inicio.oculto {
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    pointer-events: none;
-}
-
-#inicio h1 {
-
-    margin: 0 0 20px;
-
-    color: #df78a4;
-
-    font-size:
-        clamp(2.8rem, 10vw, 5rem);
-
-    text-shadow:
-        0 4px 12px rgba(180,70,120,.18);
-}
-
-#inicio p {
-
-    max-width: 600px;
-
-    margin: 0 0 35px;
-
-    color: #b85c82;
-
-    font-size:
-        clamp(1rem, 3vw, 1.25rem);
-
-    line-height: 1.8;
-}
-
-#abrir {
-
-    padding: 16px 42px;
-
-    border: 2px solid white;
-
-    border-radius: 999px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f5a6c6,
-            #e67fa9
-        );
-
-    color: white;
-
-    font-family: inherit;
-
-    font-size: 1.15rem;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 10px 25px rgba(184,82,126,.25);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-#abrir:hover {
-
-    transform:
-        translateY(-4px)
-        scale(1.05);
-
-    box-shadow:
-        0 15px 35px rgba(184,82,126,.35);
 }
 
 
@@ -214,8 +186,6 @@ body {
     box-shadow:
         0 0 60px rgba(255,255,255,.8),
         0 0 120px rgba(255,190,220,.6);
-
-    z-index: 1;
 }
 
 
@@ -641,7 +611,21 @@ body {
 
     backdrop-filter: blur(10px);
 
-    z-index: 60;
+    animation:
+        aparecerMensaje 1.5s ease forwards;
+}
+
+@keyframes aparecerMensaje {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .mensaje::before {
@@ -697,7 +681,7 @@ body {
 
 
 /* =========================================================
-   RECUERDOS
+   ESCENARIO DE RECUERDOS
 ========================================================= */
 
 .recuerdos {
@@ -706,7 +690,7 @@ body {
 
     width: 100%;
 
-    height: 650px;
+    height: 560px;
 
     margin-top: 75px;
 
@@ -726,8 +710,6 @@ body {
 
     box-shadow:
         inset 0 0 60px rgba(255,255,255,.15);
-
-    z-index: 70;
 }
 
 
@@ -743,7 +725,8 @@ body {
 
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     z-index: 100;
 
@@ -767,7 +750,7 @@ body {
 
 
 /* =========================================================
-   CONTENEDOR
+   CONTENEDOR DE FOTOS
 ========================================================= */
 
 #recuerdosFlotantes {
@@ -776,19 +759,26 @@ body {
 
     inset: 0;
 
+    width: 100%;
+    height: 100%;
+
     overflow: hidden;
+
+    z-index: 50;
 }
 
 
 /* =========================================================
-   TARJETAS
+   TARJETA DE FOTO
 ========================================================= */
 
 .recuerdoFlotante {
 
     position: absolute;
 
-    bottom: -250px;
+    left: 50%;
+
+    bottom: -230px;
 
     width: 170px;
 
@@ -798,7 +788,8 @@ body {
 
     border-radius: 12px;
 
-    border: 1px solid white;
+    border:
+        1px solid white;
 
     box-shadow:
         0 15px 35px rgba(120,60,95,.35),
@@ -806,14 +797,13 @@ body {
 
     opacity: 0;
 
-    z-index: 80;
+    z-index: 60;
 
     animation:
-        recuerdoFlotar 10s linear forwards;
+        recuerdoFlotar 9s linear forwards;
 }
 
-.recuerdoFlotante img,
-.recuerdoFlotante video {
+.recuerdoFlotante img {
 
     display: block;
 
@@ -825,12 +815,12 @@ body {
 
     border-radius: 7px;
 
-    background: #f5dce8;
+    background: #f6dce8;
 }
 
 
 /* =========================================================
-   CORAZON DE TARJETA
+   CORAZON DE LA FOTO
 ========================================================= */
 
 .recuerdoFlotante::after {
@@ -864,7 +854,8 @@ body {
 
 
 /* =========================================================
-   ANIMACIÓN
+   RECORRIDO COMPLETO
+   LAS FOTOS SUBEN DESDE ABAJO HASTA ARRIBA
 ========================================================= */
 
 @keyframes recuerdoFlotar {
@@ -873,76 +864,91 @@ body {
 
         opacity: 0;
 
+        bottom: -230px;
+
         transform:
-            translate(-50%, 100px)
+            translateX(-50%)
             rotate(-8deg)
             scale(.65);
     }
 
-    8% {
+    10% {
 
         opacity: 1;
 
+        bottom: -150px;
+
         transform:
-            translate(-50%, 0)
+            translateX(-50%)
             rotate(-5deg)
-            scale(.9);
+            scale(.85);
     }
 
-    25% {
+    30% {
+
+        opacity: 1;
+
+        bottom: 20px;
 
         transform:
-            translate(
-                calc(-50% - 100px),
-                -140px
+            translateX(
+                calc(-50% - 90px)
             )
             rotate(7deg)
             scale(1);
     }
 
-    45% {
+    50% {
+
+        opacity: 1;
+
+        bottom: 190px;
 
         transform:
-            translate(
-                calc(-50% + 100px),
-                -290px
+            translateX(
+                calc(-50% + 90px)
             )
             rotate(-6deg)
             scale(1.03);
     }
 
-    65% {
+    70% {
+
+        opacity: 1;
+
+        bottom: 360px;
 
         transform:
-            translate(
-                calc(-50% - 80px),
-                -440px
+            translateX(
+                calc(-50% - 70px)
             )
             rotate(6deg)
             scale(.98);
     }
 
-    82% {
+    85% {
 
-        opacity: .8;
+        opacity: .75;
+
+        bottom: 480px;
 
         transform:
-            translate(
-                calc(-50% + 70px),
-                -580px
+            translateX(
+                calc(-50% + 60px)
             )
             rotate(-7deg)
-            scale(.85);
+            scale(.8);
     }
 
     100% {
 
         opacity: 0;
 
+        bottom: 650px;
+
         transform:
-            translate(
-                calc(-50% - 60px),
-                -760px
+            translateX(
+                calc(-50% - 50px)
             )
             rotate(8deg)
             scale(.55);
@@ -982,7 +988,7 @@ body {
 
 
 /* =========================================================
-   FINAL
+   MENSAJE FINAL
 ========================================================= */
 
 .final {
@@ -1034,7 +1040,7 @@ body {
 
 
 /* =========================================================
-   MUSICA
+   MÚSICA
 ========================================================= */
 
 #musicaControl {
@@ -1044,7 +1050,7 @@ body {
     right: 18px;
     bottom: 18px;
 
-    z-index: 500;
+    z-index: 200;
 
     width: 55px;
     height: 55px;
@@ -1072,20 +1078,17 @@ body {
 
 
 /* =========================================================
-   MOVIL
+   MÓVIL
 ========================================================= */
 
 @media (max-width: 600px) {
 
     .contenido {
-
         width: 94%;
     }
 
     .mensaje {
-
-        padding:
-            38px 22px;
+        padding: 38px 22px;
     }
 
     .mensaje p {
@@ -1097,7 +1100,7 @@ body {
 
     .recuerdos {
 
-        height: 560px;
+        height: 500px;
 
         margin-top: 65px;
 
@@ -1107,10 +1110,11 @@ body {
     .recuerdoFlotante {
 
         width: 135px;
+
+        bottom: -200px;
     }
 
-    .recuerdoFlotante img,
-    .recuerdoFlotante video {
+    .recuerdoFlotante img {
 
         height: 175px;
     }
@@ -1121,76 +1125,91 @@ body {
 
             opacity: 0;
 
+            bottom: -200px;
+
             transform:
-                translate(-50%, 100px)
+                translateX(-50%)
                 rotate(-7deg)
                 scale(.6);
         }
 
-        8% {
+        10% {
 
             opacity: 1;
 
+            bottom: -130px;
+
             transform:
-                translate(-50%, 0)
+                translateX(-50%)
                 rotate(-4deg)
-                scale(.85);
+                scale(.8);
         }
 
-        25% {
+        30% {
+
+            opacity: 1;
+
+            bottom: 10px;
 
             transform:
-                translate(
-                    calc(-50% - 45px),
-                    -110px
+                translateX(
+                    calc(-50% - 45px)
                 )
                 rotate(5deg)
                 scale(1);
         }
 
-        45% {
+        50% {
+
+            opacity: 1;
+
+            bottom: 150px;
 
             transform:
-                translate(
-                    calc(-50% + 45px),
-                    -230px
+                translateX(
+                    calc(-50% + 45px)
                 )
                 rotate(-5deg)
                 scale(1);
         }
 
-        65% {
+        70% {
+
+            opacity: 1;
+
+            bottom: 290px;
 
             transform:
-                translate(
-                    calc(-50% - 35px),
-                    -350px
+                translateX(
+                    calc(-50% - 35px)
                 )
                 rotate(5deg)
-                scale(.95);
+                scale(.9);
         }
 
-        82% {
+        85% {
 
             opacity: .7;
 
+            bottom: 400px;
+
             transform:
-                translate(
-                    calc(-50% + 30px),
-                    -470px
+                translateX(
+                    calc(-50% + 30px)
                 )
                 rotate(-6deg)
-                scale(.8);
+                scale(.7);
         }
 
         100% {
 
             opacity: 0;
 
+            bottom: 570px;
+
             transform:
-                translate(
-                    calc(-50% - 25px),
-                    -650px
+                translateX(
+                    calc(-50% - 25px)
                 )
                 rotate(7deg)
                 scale(.5);
@@ -1199,7 +1218,6 @@ body {
 }
 
 </style>
-
 </head>
 
 
@@ -1212,9 +1230,7 @@ body {
 
 <section id="inicio">
 
-    <h1>
-        Para mi Riri ♡
-    </h1>
+    <h1>Para mi Riri ♡</h1>
 
     <p>
         Hice este pequeño lugar para guardar
@@ -1233,7 +1249,6 @@ body {
 </section>
 
 
-
 <!-- =====================================================
      PÁGINA
 ===================================================== -->
@@ -1243,20 +1258,13 @@ body {
 
     <div class="sol"></div>
 
-
     <div id="estrellas"></div>
-
 
     <div id="corazones"></div>
 
-
     <div class="pradera"></div>
 
-
-    <div
-        class="flores"
-        id="flores">
-    </div>
+    <div class="flores" id="flores"></div>
 
 
     <!-- CONEJITO -->
@@ -1280,7 +1288,6 @@ body {
     </div>
 
 
-
     <!-- =================================================
          CONTENIDO
     ================================================== -->
@@ -1296,11 +1303,9 @@ body {
         <p class="subtitulo">
 
             Un pequeño rincón hecho especialmente
-            para la persona que hace mis días
-            más bonitos. ♡
+            para la persona que hace mis días más bonitos. ♡
 
         </p>
-
 
 
         <!-- =================================================
@@ -1347,9 +1352,8 @@ body {
         </article>
 
 
-
         <!-- =================================================
-             RECUERDOS
+             🌸 RECUERDOS — SOLO 4 FOTOS PNG
         ================================================== -->
 
         <section class="recuerdos">
@@ -1370,7 +1374,6 @@ body {
 
 
         </section>
-
 
 
         <!-- =================================================
@@ -1400,9 +1403,8 @@ body {
 </main>
 
 
-
 <!-- =====================================================
-     MUSICA
+     MÚSICA
 ===================================================== -->
 
 <audio
@@ -1421,10 +1423,9 @@ body {
     id="musicaControl"
     onclick="controlarMusica()">
 
-    ▶
+    II
 
 </button>
-
 
 
 <script>
@@ -1501,7 +1502,7 @@ for (let i = 0; i < 20; i++) {
 const flores =
     document.getElementById("flores");
 
-for (let i = 40; i--;) {
+for (let i = 0; i < 40; i++) {
 
     const flor =
         document.createElement("div");
@@ -1522,61 +1523,8 @@ for (let i = 40; i--;) {
 
 
 /* =========================================================
-   RECUERDOS
+   📸 LAS 4 FOTOS
 ========================================================= */
-
-/*
-   IMPORTANTE:
-
-   Los archivos están en la MISMA CARPETA
-   que este archivo HTML.
-
-   FOTO:
-   foto1.png
-   foto2.png
-   foto3.png
-   foto4.png
-
-   VIDEOS:
-   video1.mp4
-   video2.mp4
-
-*/
-
-const recuerdos = [
-
-    {
-        tipo: "imagen",
-        src: "foto1.png"
-    },
-
-    {
-        tipo: "video",
-        src: "video1.mp4"
-    },
-
-    {
-        tipo: "imagen",
-        src: "foto2.png"
-    },
-
-    {
-        tipo: "video",
-        src: "video2.mp4"
-    },
-
-    {
-        tipo: "imagen",
-        src: "foto3.png"
-    },
-
-    {
-        tipo: "imagen",
-        src: "foto4.png"
-    }
-
-];
-
 
 const recuerdosFlotantes =
     document.getElementById(
@@ -1584,16 +1532,29 @@ const recuerdosFlotantes =
     );
 
 
+const recuerdos = [
+
+    "srcfoto1.png",
+
+    "srcfoto2.png",
+
+    "srcfoto3.png",
+
+    "srcfoto4.png"
+
+];
+
+
 let recuerdoActual = 0;
 
 
 /* =========================================================
-   CREAR RECUERDO
+   CREAR FOTO
 ========================================================= */
 
 function crearRecuerdo() {
 
-    const recuerdo =
+    const src =
         recuerdos[recuerdoActual];
 
 
@@ -1605,73 +1566,45 @@ function crearRecuerdo() {
 
 
     /*
-       Los recuerdos salen desde
-       diferentes puntos de los lados.
+       Cada foto aparece en una
+       posición diferente.
     */
 
     const posicion =
-        10 + Math.random() * 80;
+        20 + Math.random() * 60;
 
     tarjeta.style.left =
         posicion + "%";
 
 
-    /* =====================================================
-       FOTO PNG
-    ===================================================== */
-
-    if (recuerdo.tipo === "imagen") {
-
-        const img =
-            document.createElement("img");
-
-        img.src =
-            recuerdo.src;
-
-        img.alt =
-            "Nuestro recuerdo ♡";
-
-        /*
-           Evita que el navegador intente
-           interpretar otra ruta.
-        */
-
-        img.loading = "eager";
-
-        tarjeta.appendChild(
-            img
-        );
-    }
+    const img =
+        document.createElement("img");
 
 
-    /* =====================================================
-       VIDEO MP4
-    ===================================================== */
+    img.src = src;
 
-    if (recuerdo.tipo === "video") {
+    img.alt =
+        "Nuestro recuerdo ♡";
 
-        const video =
-            document.createElement("video");
 
-        video.src =
-            recuerdo.src;
+    /*
+       Si una foto no carga,
+       mostramos información en consola.
+    */
 
-        video.autoplay = true;
+    img.onerror = function () {
 
-        video.muted = true;
-
-        video.loop = true;
-
-        video.playsInline = true;
-
-        tarjeta.appendChild(
-            video
+        console.error(
+            "No se pudo cargar la foto:",
+            src
         );
 
-        video.play().catch(
-            () => {}
-        );
-    }
+    };
+
+
+    tarjeta.appendChild(
+        img
+    );
 
 
     recuerdosFlotantes.appendChild(
@@ -1693,21 +1626,27 @@ function crearRecuerdo() {
 
 
     /*
-       La tarjeta vive un poco más que
-       la animación para evitar cortes.
+       La animación dura 9 segundos.
     */
 
     setTimeout(() => {
 
-        tarjeta.remove();
+        if (
+            tarjeta &&
+            tarjeta.parentNode
+        ) {
 
-    }, 10300);
+            tarjeta.remove();
+
+        }
+
+    }, 9200);
 
 }
 
 
 /* =========================================================
-   PRIMER RECUERDO
+   INICIAR FOTOS
 ========================================================= */
 
 setTimeout(() => {
@@ -1717,15 +1656,16 @@ setTimeout(() => {
 }, 1000);
 
 
-/* =========================================================
-   SIGUIENTES RECUERDOS
-========================================================= */
+/*
+   Cada 2.5 segundos aparece
+   una nueva foto.
+*/
 
 setInterval(() => {
 
     crearRecuerdo();
 
-}, 3000);
+}, 2500);
 
 
 /* =========================================================
@@ -1750,30 +1690,22 @@ function abrirPagina() {
     );
 
 
-    musica.volume = 0.7;
+    musica.volume = .7;
 
 
-    musica.play()
-        .then(() => {
+    musica.play().catch(() => {
 
-            document.getElementById(
-                "musicaControl"
-            ).textContent = "Ⅱ";
+        console.log(
+            "El navegador bloqueó el autoplay."
+        );
 
-        })
-        .catch(() => {
-
-            console.log(
-                "El navegador bloqueó la música."
-            );
-
-        });
+    });
 
 }
 
 
 /* =========================================================
-   CONTROL DE MUSICA
+   MÚSICA
 ========================================================= */
 
 function controlarMusica() {
@@ -1789,22 +1721,14 @@ function controlarMusica() {
         );
 
 
-    if (
-        musica.paused
-    ) {
+    if (musica.paused) {
 
-        musica.play()
-            .then(() => {
+        musica.play();
 
-                boton.textContent =
-                    "Ⅱ";
+        boton.textContent =
+            "II";
 
-            })
-            .catch(() => {});
-
-    }
-
-    else {
+    } else {
 
         musica.pause();
 
@@ -1818,5 +1742,4 @@ function controlarMusica() {
 </script>
 
 </body>
-
 </html>
