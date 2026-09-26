@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
@@ -8,10 +9,6 @@
 <title>Para Riri ♡</title>
 
 <style>
-
-/* =========================================================
-   GENERAL
-========================================================= */
 
 * {
     box-sizing: border-box;
@@ -35,12 +32,38 @@ body {
 
 
 /* =========================================================
+   FONDO
+========================================================= */
+
+#pagina {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #bde4f5 0%,
+            #c7e8f6 18%,
+            #f4d5e5 43%,
+            #f4c6dc 65%,
+            #e9aeca 82%,
+            #d88eae 100%
+        );
+}
+
+
+/* =========================================================
    PANTALLA DE ENTRADA
 ========================================================= */
 
 #inicio {
 
     position: fixed;
+
     inset: 0;
 
     width: 100vw;
@@ -49,8 +72,11 @@ body {
     z-index: 9999;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
@@ -67,14 +93,16 @@ body {
         );
 
     transition:
-        opacity 1.3s ease,
-        visibility 1.3s ease;
+        opacity 1.2s ease,
+        visibility 1.2s ease;
 }
 
 #inicio.oculto {
 
     opacity: 0;
+
     visibility: hidden;
+
     pointer-events: none;
 }
 
@@ -85,6 +113,7 @@ body {
     position: absolute;
 
     top: 10%;
+
     left: 0;
 
     width: 100%;
@@ -98,8 +127,6 @@ body {
     letter-spacing: 18px;
 
     opacity: .7;
-
-    pointer-events: none;
 }
 
 #inicio::after {
@@ -109,6 +136,7 @@ body {
     position: absolute;
 
     bottom: 10%;
+
     left: 0;
 
     width: 100%;
@@ -122,52 +150,6 @@ body {
     letter-spacing: 25px;
 
     opacity: .65;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   CONTENIDO ENTRADA
-========================================================= */
-
-.inicio-contenido {
-
-    position: relative;
-    z-index: 2;
-
-    width: min(700px, 92%);
-
-    padding: 50px 35px;
-
-    background: #fff8fc;
-
-    border: 3px solid #fff;
-
-    border-radius: 40px;
-
-    box-shadow:
-        0 20px 60px rgba(188,91,132,.22),
-        0 0 0 10px rgba(255,255,255,.25);
-
-    animation: entradaSuave 1.5s ease;
-}
-
-@keyframes entradaSuave {
-
-    from {
-        opacity: 0;
-        transform:
-            translateY(30px)
-            scale(.94);
-    }
-
-    to {
-        opacity: 1;
-        transform:
-            translateY(0)
-            scale(1);
-    }
 }
 
 #inicio h1 {
@@ -175,7 +157,7 @@ body {
     margin: 0 0 20px;
 
     font-size:
-        clamp(2.8rem, 9vw, 5.5rem);
+        clamp(2.8rem, 9vw, 5rem);
 
     color: #e783ad;
 
@@ -185,18 +167,16 @@ body {
 
 #inicio p {
 
-    margin: 0 auto 35px;
+    max-width: 550px;
 
-    max-width: 560px;
-
-    font-size:
-        clamp(1.05rem, 3vw, 1.3rem);
-
-    line-height: 1.8;
+    margin: 0 auto 30px;
 
     color: #b85d82;
 
-    font-weight: 500;
+    font-size:
+        clamp(1rem, 3vw, 1.25rem);
+
+    line-height: 1.8;
 }
 
 #abrir {
@@ -227,44 +207,14 @@ body {
     box-shadow:
         0 10px 25px rgba(184,82,126,.25);
 
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
+    transition: .3s ease;
 }
 
 #abrir:hover {
 
     transform:
         translateY(-4px)
-        scale(1.06);
-
-    box-shadow:
-        0 15px 35px rgba(184,82,126,.35);
-}
-
-
-/* =========================================================
-   FONDO
-========================================================= */
-
-#pagina {
-
-    position: relative;
-
-    min-height: 100vh;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #bde4f5 0%,
-            #c7e8f6 18%,
-            #f4d5e5 43%,
-            #f4c6dc 65%,
-            #e9aeca 82%,
-            #d88eae 100%
-        );
+        scale(1.05);
 }
 
 
@@ -659,12 +609,16 @@ body {
 }
 
 .titulo::before {
+
     content: "♡ ";
+
     color: #f39abb;
 }
 
 .titulo::after {
+
     content: " ♡";
+
     color: #f39abb;
 }
 
@@ -762,9 +716,6 @@ body {
     color: white;
 
     font-size: 25px;
-
-    box-shadow:
-        0 7px 20px rgba(200,100,145,.35);
 }
 
 .mensaje p {
@@ -793,7 +744,7 @@ body {
 
     width: 100%;
 
-    height: 520px;
+    height: 560px;
 
     margin-top: 75px;
 
@@ -815,16 +766,12 @@ body {
         inset 0 0 60px rgba(255,255,255,.15);
 }
 
-
-/* =========================================================
-   TITULO RECUERDOS
-========================================================= */
-
 .recuerdosTitulo {
 
     position: absolute;
 
     top: 22px;
+
     left: 50%;
 
     transform: translateX(-50%);
@@ -849,11 +796,6 @@ body {
     margin: 0 8px;
 }
 
-
-/* =========================================================
-   CONTENEDOR FLOTANTES
-========================================================= */
-
 #recuerdosFlotantes {
 
     position: absolute;
@@ -865,14 +807,14 @@ body {
 
 
 /* =========================================================
-   TARJETA FOTO / VIDEO
+   TARJETAS
 ========================================================= */
 
 .recuerdoFlotante {
 
     position: absolute;
 
-    bottom: -230px;
+    bottom: -240px;
 
     width: 170px;
 
@@ -932,9 +874,6 @@ body {
     color: white;
 
     font-size: 18px;
-
-    box-shadow:
-        0 5px 15px rgba(190,80,130,.35);
 }
 
 
@@ -966,25 +905,21 @@ body {
 
     25% {
 
-        opacity: 1;
-
         transform:
             translate(
-                calc(-50% - 90px),
+                calc(-50% - 70px),
                 -100px
             )
-            rotate(7deg)
+            rotate(6deg)
             scale(1);
     }
 
     45% {
 
-        opacity: 1;
-
         transform:
             translate(
-                calc(-50% + 100px),
-                -230px
+                calc(-50% + 90px),
+                -220px
             )
             rotate(-6deg)
             scale(1.03);
@@ -992,12 +927,10 @@ body {
 
     65% {
 
-        opacity: 1;
-
         transform:
             translate(
                 calc(-50% - 80px),
-                -370px
+                -360px
             )
             rotate(6deg)
             scale(.98);
@@ -1013,17 +946,17 @@ body {
                 -500px
             )
             rotate(-7deg)
-            scale(.82);
+            scale(.85);
     }
 
     94% {
 
-        opacity: .35;
+        opacity: .3;
 
         transform:
             translate(
                 calc(-50% - 50px),
-                -620px
+                -630px
             )
             rotate(7deg)
             scale(.65);
@@ -1041,36 +974,6 @@ body {
             rotate(-8deg)
             scale(.45);
     }
-}
-
-
-/* =========================================================
-   DECORACIÓN
-========================================================= */
-
-.recuerdos::before {
-
-    content:
-        "✿   ♡   ✿   ♡   ✿";
-
-    position: absolute;
-
-    left: 50%;
-    top: 65px;
-
-    transform:
-        translateX(-50%);
-
-    z-index: 20;
-
-    color:
-        rgba(255,255,255,.55);
-
-    font-size: 18px;
-
-    letter-spacing: 10px;
-
-    pointer-events: none;
 }
 
 
@@ -1120,9 +1023,6 @@ body {
         clamp(1.7rem, 7vw, 2.8rem);
 
     color: #ffc2d9;
-
-    text-shadow:
-        0 0 15px rgba(255,120,170,.5);
 }
 
 
@@ -1142,8 +1042,7 @@ body {
     width: 55px;
     height: 55px;
 
-    border:
-        1px solid rgba(255,255,255,.7);
+    border: 1px solid rgba(255,255,255,.7);
 
     border-radius: 50%;
 
@@ -1188,7 +1087,7 @@ body {
 
     .recuerdos {
 
-        height: 470px;
+        height: 500px;
 
         margin-top: 65px;
 
@@ -1232,8 +1131,8 @@ body {
 
             transform:
                 translate(
-                    calc(-50% - 45px),
-                    -100px
+                    calc(-50% - 40px),
+                    -90px
                 )
                 rotate(5deg)
                 scale(1);
@@ -1244,7 +1143,7 @@ body {
             transform:
                 translate(
                     calc(-50% + 45px),
-                    -220px
+                    -200px
                 )
                 rotate(-5deg)
                 scale(1);
@@ -1255,7 +1154,7 @@ body {
             transform:
                 translate(
                     calc(-50% - 35px),
-                    -340px
+                    -320px
                 )
                 rotate(5deg)
                 scale(.9);
@@ -1268,7 +1167,7 @@ body {
             transform:
                 translate(
                     calc(-50% + 30px),
-                    -460px
+                    -430px
                 )
                 rotate(-6deg)
                 scale(.75);
@@ -1290,8 +1189,8 @@ body {
 }
 
 </style>
-</head>
 
+</head>
 
 <body>
 
@@ -1302,33 +1201,29 @@ body {
 
 <section id="inicio">
 
-    <div class="inicio-contenido">
+    <h1>
+        Para mi Riri ♡
+    </h1>
 
-        <h1>
-            Para mi Riri ♡
-        </h1>
+    <p>
+        Hice este pequeño lugar para guardar
+        algunos recuerdos y decirte algo
+        que llevo en el corazón.
+    </p>
 
-        <p>
-            Hice este pequeño lugar para guardar
-            algunos recuerdos y decirte algo
-            que llevo en el corazón.
-        </p>
+    <button
+        id="abrir"
+        onclick="abrirPagina()">
 
-        <button
-            id="abrir"
-            onclick="abrirPagina()">
+        Entrar ♡
 
-            Entrar ♡
-
-        </button>
-
-    </div>
+    </button>
 
 </section>
 
 
 <!-- =====================================================
-     PÁGINA
+     PÁGINA PRINCIPAL
 ===================================================== -->
 
 <main id="pagina">
@@ -1336,17 +1231,16 @@ body {
 
     <div class="sol"></div>
 
-
     <div id="estrellas"></div>
-
 
     <div id="corazones"></div>
 
-
     <div class="pradera"></div>
 
-
-    <div class="flores" id="flores"></div>
+    <div
+        class="flores"
+        id="flores">
+    </div>
 
 
     <!-- CONEJITO -->
@@ -1383,8 +1277,10 @@ body {
 
 
         <p class="subtitulo">
+
             Un pequeño rincón hecho especialmente
             para la persona que hace mis días más bonitos. ♡
+
         </p>
 
 
@@ -1438,6 +1334,7 @@ body {
 
         <section class="recuerdos">
 
+
             <div class="recuerdosTitulo">
 
                 <span>♡</span>
@@ -1450,6 +1347,7 @@ body {
 
 
             <div id="recuerdosFlotantes"></div>
+
 
         </section>
 
@@ -1580,7 +1478,7 @@ for (let i = 0; i < 20; i++) {
 const flores =
     document.getElementById("flores");
 
-for (let i = 40; i--;) {
+for (let i = 40; i > 0; i--) {
 
     const flor =
         document.createElement("div");
@@ -1601,66 +1499,66 @@ for (let i = 40; i--;) {
 
 
 /* =========================================================
-   RECUERDOS
+   FOTOS Y VIDEOS
 ========================================================= */
 
 /*
    IMPORTANTE:
 
-   Tus 4 FOTOS son PNG:
+   Tus fotos son:
 
-   foto1.png
-   foto2.png
-   foto3.png
-   foto4.png
+       fotos/foto1.png
+       fotos/foto2.png
+       fotos/foto3.png
+       fotos/foto4.png
 
-   Tus VIDEOS:
+   Tus videos son:
 
-   video1.mp4
-   video2.mp4
+       videos/video1.mp4
+       videos/video2.mp4
 
-   Todos están directamente junto al HTML.
+   El nombre debe coincidir EXACTAMENTE.
 */
-
-const recuerdosFlotantes =
-    document.getElementById(
-        "recuerdosFlotantes"
-    );
-
 
 const recuerdos = [
 
     {
         tipo: "imagen",
-        src: "foto1.png"
+        src: "fotos/foto1.png"
     },
 
     {
         tipo: "video",
-        src: "video1.mp4"
+        src: "videos/video1.mp4"
     },
 
     {
         tipo: "imagen",
-        src: "foto2.png"
+        src: "fotos/foto2.png"
     },
 
     {
         tipo: "video",
-        src: "video2.mp4"
+        src: "videos/video2.mp4"
     },
 
     {
         tipo: "imagen",
-        src: "foto3.png"
+        src: "fotos/foto3.png"
     },
 
     {
         tipo: "imagen",
-        src: "foto4.png"
+        src: "fotos/foto4.png"
     }
 
 ];
+
+
+const recuerdosFlotantes =
+    document.getElementById(
+        "recuerdosFlotantes"
+    );
 
 
 let recuerdoActual = 0;
@@ -1684,8 +1582,9 @@ function crearRecuerdo() {
 
 
     /*
-       Se mantienen a los lados
-       y no aparecen debajo del texto.
+       Los recuerdos salen desde los lados,
+       pero comienzan abajo y suben
+       durante todo el recorrido.
     */
 
     const posicion =
@@ -1696,7 +1595,7 @@ function crearRecuerdo() {
 
 
     /* =====================================================
-       FOTO
+       FOTO PNG
     ===================================================== */
 
     if (recuerdo.tipo === "imagen") {
@@ -1711,25 +1610,27 @@ function crearRecuerdo() {
             "Nuestro recuerdo ♡";
 
         /*
-           Si no carga, aparecerá un mensaje
-           en la consola indicando el archivo.
+           Esto permite saber si la ruta
+           realmente existe.
         */
 
         img.onerror = function() {
 
             console.error(
-                "No se pudo cargar:",
+                "NO SE PUDO CARGAR LA FOTO:",
                 recuerdo.src
             );
 
         };
 
-        tarjeta.appendChild(img);
+        tarjeta.appendChild(
+            img
+        );
     }
 
 
     /* =====================================================
-       VIDEO
+       VIDEO MP4
     ===================================================== */
 
     if (recuerdo.tipo === "video") {
@@ -1753,15 +1654,19 @@ function crearRecuerdo() {
         video.onerror = function() {
 
             console.error(
-                "No se pudo cargar:",
+                "NO SE PUDO CARGAR EL VIDEO:",
                 recuerdo.src
             );
 
         };
 
-        tarjeta.appendChild(video);
+        tarjeta.appendChild(
+            video
+        );
 
-        video.play().catch(() => {});
+        video.play().catch(
+            () => {}
+        );
     }
 
 
@@ -1778,6 +1683,7 @@ function crearRecuerdo() {
     ) {
 
         recuerdoActual = 0;
+
     }
 
 
@@ -1785,11 +1691,14 @@ function crearRecuerdo() {
        La animación dura 11 segundos.
     */
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        tarjeta.remove();
+            tarjeta.remove();
 
-    }, 11200);
+        },
+        11100
+    );
 }
 
 
@@ -1797,22 +1706,20 @@ function crearRecuerdo() {
    PRIMER RECUERDO
 ========================================================= */
 
-setTimeout(() => {
-
-    crearRecuerdo();
-
-}, 1000);
+setTimeout(
+    crearRecuerdo,
+    1000
+);
 
 
 /* =========================================================
    SIGUIENTES RECUERDOS
 ========================================================= */
 
-setInterval(() => {
-
-    crearRecuerdo();
-
-}, 3500);
+setInterval(
+    crearRecuerdo,
+    3200
+);
 
 
 /* =========================================================
@@ -1831,7 +1738,6 @@ function abrirPagina() {
             "musica"
         );
 
-
     inicio.classList.add(
         "oculto"
     );
@@ -1841,21 +1747,24 @@ function abrirPagina() {
 
 
     musica.play()
-        .then(() => {
+        .then(
+            () => {
 
-            document.getElementById(
-                "musicaControl"
-            ).textContent = "Ⅱ";
+                document.getElementById(
+                    "musicaControl"
+                ).textContent = "Ⅱ";
 
-        })
-        .catch(() => {
+            }
+        )
+        .catch(
+            () => {
 
-            console.log(
-                "El navegador bloqueó la reproducción automática."
-            );
+                console.log(
+                    "La música necesita interacción del usuario."
+                );
 
-        });
-
+            }
+        );
 }
 
 
@@ -1876,16 +1785,22 @@ function controlarMusica() {
         );
 
 
-    if (musica.paused) {
+    if (
+        musica.paused
+    ) {
 
         musica.play()
-            .then(() => {
+            .then(
+                () => {
 
-                boton.textContent =
-                    "Ⅱ";
+                    boton.textContent =
+                        "Ⅱ";
 
-            })
-            .catch(() => {});
+                }
+            )
+            .catch(
+                () => {}
+            );
 
     } else {
 
@@ -1895,7 +1810,6 @@ function controlarMusica() {
             "▶";
 
     }
-
 }
 
 </script>
